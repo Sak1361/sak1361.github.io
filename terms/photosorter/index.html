@@ -3,21 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>利用規約 - 写真整理くん</title>
+<title>利用規約 - 写真整理くん / Terms of Service - PhotoSorter</title>
 <style>
   body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 0 auto; padding: 20px; line-height: 1.8; color: #333; }
   h1 { font-size: 1.4em; border-bottom: 2px solid #0066cc; padding-bottom: 8px; }
   h2 { font-size: 1.1em; margin-top: 24px; }
   p, ul { font-size: 0.95em; }
   .updated { color: #666; font-size: 0.85em; }
+  .lang-switch { text-align: right; margin-bottom: 16px; }
+  .lang-switch button { background: #0066cc; color: #fff; border: none; padding: 6px 16px; border-radius: 6px; cursor: pointer; font-size: 0.85em; }
+  .lang-en, .lang-ja { display: none; }
 </style>
 </head>
 <body>
 
-<h1>利用規約</h1>
-<p class="updated">最終更新日: 2026年3月21日</p>
+<div class="lang-switch">
+  <button onclick="switchLang()">English / 日本語</button>
+</div>
 
-<p>本利用規約（以下「本規約」）は、「写真整理くん - AIで写真を自動分類・整理」（以下「本アプリ」）の利用条件を定めるものです。本アプリをご利用いただく前に、本規約をよくお読みください。</p>
+<!-- 日本語 -->
+<div class="lang-ja">
+<h1>利用規約</h1>
+<p class="updated">最終更新日: 2026年3月22日</p>
+
+<p>本利用規約（以下「本規約」）は、「写真整理くん（PhotoSorter）」（以下「本アプリ」）の利用条件を定めるものです。本アプリをご利用いただく前に、本規約をよくお読みください。</p>
 
 <h2>1. サービスの内容</h2>
 <p>本アプリは、端末内の写真をAIで自動分類・整理するサービスを提供します。写真の分析は全て端末内で行われ、外部サーバーとの通信は行いません（広告配信を除く）。</p>
@@ -69,6 +78,90 @@
 
 <h2>11. お問い合わせ</h2>
 <p>本規約に関するご質問がある場合は、アプリ内のフィードバック機能またはApp Storeのサポートページからお問い合わせください。</p>
+</div>
+
+<!-- English -->
+<div class="lang-en">
+<h1>Terms of Service</h1>
+<p class="updated">Last updated: March 22, 2026</p>
+
+<p>These Terms of Service ("Terms") govern your use of "PhotoSorter — AI Photo Organizer" (the "App"). Please read these Terms carefully before using the App.</p>
+
+<h2>1. Service Description</h2>
+<p>The App provides AI-powered automatic photo classification and organization on your device. All photo analysis is performed locally on your device with no external server communication (except for ad delivery).</p>
+
+<h2>2. Requirements</h2>
+<ul>
+  <li>An iPhone running iOS 18.0 or later is required.</li>
+  <li>Photo library access permission is required.</li>
+  <li>Some features (Map view) require location permission.</li>
+  <li>Some features (Camera scan) require camera access permission.</li>
+</ul>
+
+<h2>3. AI Classification Accuracy</h2>
+<p>The App's AI classification does not guarantee 100% accuracy. Classification results are provided as reference. Please verify important photo organization manually.</p>
+
+<h2>4. In-App Purchases</h2>
+<ul>
+  <li>All App features are available for free.</li>
+  <li>In-app purchases ("Buy the Dev a Coffee") are optional tips to support the developer, not feature unlocks.</li>
+  <li>Purchases are consumable. Refunds follow Apple's policies.</li>
+  <li>Supporters gain access to a feedback feature to send requests to the developer.</li>
+</ul>
+
+<h2>5. Learning Data</h2>
+<p>The App learns from your manual classification corrections to improve scan accuracy. Learning data is stored only on your device and never sent externally. You can delete it anytime from Settings. Deleting the App also removes all learning data.</p>
+
+<h2>6. Photo Data Handling</h2>
+<ul>
+  <li>The App creates and manages custom albums in the Photos app.</li>
+  <li>Deleting an album only removes the album — photos remain in your library.</li>
+  <li>The App never deletes your actual photos.</li>
+</ul>
+
+<h2>7. Disclaimer</h2>
+<ul>
+  <li>The developer is not liable for any damages arising from the use of the App.</li>
+  <li>The App is provided "as is" without warranty of fitness for a particular purpose.</li>
+  <li>The service may be interrupted, modified, or terminated without prior notice.</li>
+</ul>
+
+<h2>8. Intellectual Property</h2>
+<p>All intellectual property rights related to the App belong to the developer.</p>
+
+<h2>9. Changes to These Terms</h2>
+<p>These Terms may be updated without prior notice. Changes become effective when posted on this page.</p>
+
+<h2>10. Governing Law</h2>
+<p>These Terms are governed by the laws of Japan. The courts of Japan shall have exclusive jurisdiction.</p>
+
+<h2>11. Contact</h2>
+<p>For questions about these Terms, please use the in-app feedback feature or the App Store support page.</p>
+</div>
+
+<script>
+function switchLang() {
+  const ja = document.querySelector('.lang-ja');
+  const en = document.querySelector('.lang-en');
+  if (ja.style.display === 'none') {
+    ja.style.display = 'block';
+    en.style.display = 'none';
+    document.documentElement.lang = 'ja';
+  } else {
+    ja.style.display = 'none';
+    en.style.display = 'block';
+    document.documentElement.lang = 'en';
+  }
+}
+// Auto-detect browser language
+(function() {
+  const lang = navigator.language || navigator.userLanguage || 'ja';
+  const isJa = lang.startsWith('ja');
+  document.querySelector('.lang-ja').style.display = isJa ? 'block' : 'none';
+  document.querySelector('.lang-en').style.display = isJa ? 'none' : 'block';
+  document.documentElement.lang = isJa ? 'ja' : 'en';
+})();
+</script>
 
 </body>
 </html>
