@@ -32,7 +32,7 @@
 <p>本アプリは、以下の情報を収集または利用する場合があります。</p>
 <ul>
   <li><strong>写真・動画:</strong> 本アプリは端末内の写真ライブラリにアクセスし、写真の分類・整理を行います。写真の分析（OCR、画像分類、バーコード検出、顔検出）は全て端末内で処理され、外部サーバーへの送信は一切行いません。</li>
-  <li><strong>位置情報:</strong> 写真に含まれる位置情報（EXIF）を使用して、撮影場所を地図上に表示します。位置情報は端末内でのみ利用され、外部に送信されません。</li>
+  <li><strong>位置情報:</strong> 写真に含まれる位置情報（EXIFメタデータ）を使用して、撮影場所を地図上に表示します。端末の位置情報API（GPS等）は使用しません。写真のEXIFデータは端末内でのみ利用され、外部に送信されません。</li>
   <li><strong>カメラ:</strong> カメラで撮影した写真をAIで分類するために使用します。撮影した写真は端末内でのみ処理されます。</li>
   <li><strong>ローカル学習データ:</strong> ユーザーの手動分類操作から学習したデータ（キーワード辞書、画像特徴量キャッシュ）は、端末内のローカルストレージにのみ保存されます。外部への送信は一切行いません。設定画面からいつでも削除できます。</li>
   <li><strong>広告に関する情報:</strong> 本アプリは Google AdMob を利用して広告を配信しています。AdMob は端末の広告識別子（IDFA）、IPアドレス等を収集し、パーソナライズされた広告の表示に使用する場合があります。</li>
@@ -91,7 +91,7 @@
 <p>The App may collect or use the following information:</p>
 <ul>
   <li><strong>Photos & Videos:</strong> The App accesses your photo library to classify and organize photos. All analysis (OCR, image classification, barcode detection, face detection) is processed entirely on your device. No photo data is ever sent to external servers.</li>
-  <li><strong>Location:</strong> EXIF location data in photos is used to display shooting locations on a map. Location data is used on-device only and never transmitted externally.</li>
+  <li><strong>Location:</strong> EXIF metadata embedded in photos is used to display shooting locations on a map. The App does not use the device's location APIs (GPS, etc.). EXIF data is processed on-device only and never transmitted externally.</li>
   <li><strong>Camera:</strong> Used to take photos for instant AI classification. Captured photos are processed on-device only.</li>
   <li><strong>Local Learning Data:</strong> Data learned from your manual sorting (keyword dictionary, image feature cache) is stored only in local storage on your device. It is never sent externally. You can delete it anytime from Settings.</li>
   <li><strong>Advertising:</strong> The App uses Google AdMob to serve ads. AdMob may collect your device's advertising identifier (IDFA), IP address, etc. to serve personalized ads.</li>
