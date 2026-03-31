@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サポート / Support - sak1361 Apps</title>
+<link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+
+<div class="legal-page">
+
+<div class="lang-switch">
+  <button onclick="switchLang()">English / 日本語</button>
+</div>
+
+<a href="../" class="legal-page__back">&larr; <span data-lang-ja>トップに戻る</span><span data-lang-en>Back to Home</span></a>
+
+<!-- 日本語 -->
+<div data-lang-ja>
+<h1>サポート</h1>
+
+<h2>お問い合わせ</h2>
+<p>アプリに関するご質問・不具合報告・ご要望は、以下のメールアドレスまでお送りください。</p>
+<p>メール: <a href="mailto:sa0601ku@gmail.com">sa0601ku@gmail.com</a></p>
+<p>通常、2〜3営業日以内にご返信いたします。</p>
+
+<h2>よくある質問</h2>
+
+<h2>Q: アプリの機能は全て無料ですか？</h2>
+<p>はい。すべてのアプリの全機能は無料でご利用いただけます。アプリ内課金（「中の人にコーヒーを」）は開発者への任意の応援であり、課金しなくても機能は制限されません。</p>
+
+<h2>Q: 個人情報はサーバーに送信されますか？</h2>
+<p>いいえ。すべてのアプリで、写真・動画・ユーザーデータは端末内でのみ処理されます。外部サーバーへの送信は一切行いません（広告配信のための情報を除く）。詳しくは各アプリのプライバシーポリシーをご確認ください。</p>
+
+<h2>Q: 広告を非表示にできますか？</h2>
+<p>現在、広告非表示オプションはご用意しておりません。</p>
+
+<h2>Q: データのバックアップはできますか？</h2>
+<p>アプリ内のデータは端末のローカルストレージに保存されています。iPhoneのバックアップ（iCloud/iTunes）に含まれます。アプリを削除するとデータは消去されます。</p>
+
+<h2>Q: 対応OSバージョンは？</h2>
+<p>各アプリの対応バージョンは、App Storeの各アプリページでご確認ください。</p>
+
+<h2>各アプリの情報</h2>
+<ul id="app-links-ja"></ul>
+</div>
+
+<!-- English -->
+<div data-lang-en>
+<h1>Support</h1>
+
+<h2>Contact</h2>
+<p>For questions, bug reports, or feature requests, please contact us at:</p>
+<p>Email: <a href="mailto:sa0601ku@gmail.com">sa0601ku@gmail.com</a></p>
+<p>We typically respond within 2–3 business days.</p>
+
+<h2>FAQ</h2>
+
+<h2>Q: Are all app features free?</h2>
+<p>Yes. All features in every app are completely free. In-app purchases ("Buy the Dev a Coffee") are optional tips to support the developer — no features are locked behind a paywall.</p>
+
+<h2>Q: Is my personal data sent to any server?</h2>
+<p>No. All apps process photos, videos, and user data entirely on your device. Nothing is sent to external servers (except information for ad delivery). See each app's privacy policy for details.</p>
+
+<h2>Q: Can I remove ads?</h2>
+<p>An ad-free option is not currently available.</p>
+
+<h2>Q: Can I back up my data?</h2>
+<p>App data is stored in local storage on your device and is included in iPhone backups (iCloud/iTunes). Deleting the app removes all data.</p>
+
+<h2>Q: What OS versions are supported?</h2>
+<p>Please check each app's page on the App Store for supported OS versions.</p>
+
+<h2>App Information</h2>
+<ul id="app-links-en"></ul>
+</div>
+
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 sak1361. All rights reserved.</p>
+</footer>
+
+<script src="../assets/js/common.js"></script>
+<script>
+(async function() {
+  setLang(detectLang());
+  try {
+    const apps = await fetchApps('../');
+    ['ja', 'en'].forEach(lang => {
+      const list = document.getElementById(`app-links-${lang}`);
+      const released = apps.filter(a => a.released);
+      list.innerHTML = released.map(app => {
+        const name = lang === 'ja' ? app.name_ja : app.name_en;
+        let links = [];
+        if (app.has_privacy_policy) links.push(`<a href="../privacy-policy/${app.id}/">${lang === 'ja' ? 'プライバシーポリシー' : 'Privacy Policy'}</a>`);
+        if (app.has_terms) links.push(`<a href="../terms/${app.id}/">${lang === 'ja' ? '利用規約' : 'Terms'}</a>`);
+        return `<li><strong>${name}</strong> — ${links.join(' / ')}</li>`;
+      }).join('');
+    });
+  } catch (e) {}
+})();
+</script>
+
+</body>
+</html>

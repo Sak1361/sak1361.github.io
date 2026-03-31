@@ -35,8 +35,14 @@ URL: `https://sak1361.github.io/`
 │   └── photosorter/
 │       └── index.html            # 写真整理くん
 ├── terms/
+│   ├── my-3d-eye-training/
+│   │   └── index.html            # 自由に立体視トレーニング 利用規約
+│   ├── namiyomi/
+│   │   └── index.html            # 波読くん 利用規約
 │   └── photosorter/
 │       └── index.html            # 写真整理くん 利用規約
+├── support/
+│   └── index.html                # 共通サポートページ（FAQ・連絡先）
 └── CLAUDE.md
 ```
 

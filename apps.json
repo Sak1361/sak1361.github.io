@@ -10,7 +10,7 @@
       "color": "#1a6b3c",
       "released": true,
       "has_privacy_policy": true,
-      "has_terms": false,
+      "has_terms": true,
       "app_store_url": ""
     },
     {
@@ -23,7 +23,7 @@
       "color": "#0077be",
       "released": true,
       "has_privacy_policy": true,
-      "has_terms": false,
+      "has_terms": true,
       "app_store_url": ""
     },
     {
