@@ -26,14 +26,7 @@ function switchLang() {
 }
 
 function setLang(lang) {
-  const isJa = lang === 'ja';
   document.documentElement.lang = lang;
-  document.querySelectorAll('[data-lang-ja]').forEach(el => {
-    el.style.display = isJa ? '' : 'none';
-  });
-  document.querySelectorAll('[data-lang-en]').forEach(el => {
-    el.style.display = isJa ? 'none' : '';
-  });
 }
 
 function detectLang() {

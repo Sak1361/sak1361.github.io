@@ -68,9 +68,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- FOUC prevention: hide lang elements until JS runs --- */
-[data-lang-ja], [data-lang-en] {
-  display: none;
+/* --- Language visibility (controlled by html[lang]) --- */
+html[lang="ja"] [data-lang-en],
+html[lang="en"] [data-lang-ja] {
+  display: none !important;
 }
 
 /* --- Typography --- */
