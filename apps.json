@@ -7,11 +7,12 @@
       "description_ja": "写真・動画で立体視トレーニング",
       "description_en": "Stereoscopic training with your photos & videos",
       "icon": "eye.trianglebadge.exclamationmark",
+      "icon_url": "./assets/icons/my-3d-eye-training.png",
       "color": "#1a6b3c",
       "released": true,
       "has_privacy_policy": true,
       "has_terms": true,
-      "app_store_url": ""
+      "app_store_url": "https://apps.apple.com/app/id6759676809"
     },
     {
       "id": "namiyomi",
@@ -20,11 +21,12 @@
       "description_ja": "競艇潮位・天気情報＆買目数計算",
       "description_en": "Boat race tide & weather info with bet calculator",
       "icon": "water.waves",
+      "icon_url": "./assets/icons/namiyomi.png",
       "color": "#0077be",
       "released": true,
       "has_privacy_policy": true,
       "has_terms": true,
-      "app_store_url": ""
+      "app_store_url": "https://apps.apple.com/app/id6760622373"
     },
     {
       "id": "photosorter",
@@ -33,6 +35,7 @@
       "description_ja": "溜まった写真、AIがスッキリ整理",
       "description_en": "AI-powered photo organizer",
       "icon": "photo.on.rectangle.angled",
+      "icon_url": "./assets/icons/photosorter.png",
       "color": "#0066cc",
       "released": true,
       "has_privacy_policy": true,

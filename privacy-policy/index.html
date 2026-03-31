@@ -47,11 +47,13 @@ function renderList(apps, lang) {
 
   list.innerHTML = items.map(app => {
     const name = lang === 'ja' ? app.name_ja : app.name_en;
-    const emoji = APP_ICON_MAP[app.icon] || '📱';
+    const iconHtml = app.icon_url
+      ? `<img class="policy-list__icon policy-list__icon--img" src="../${app.icon_url}" alt="${name}" width="40" height="40">`
+      : `<span class="policy-list__icon" style="background:${app.color}">${APP_ICON_MAP[app.icon] || '📱'}</span>`;
     return `
       <li>
         <a href="./${app.id}/">
-          <span class="policy-list__icon" style="background:${app.color}">${emoji}</span>
+          ${iconHtml}
           <span class="policy-list__name">${name}</span>
           <span class="policy-list__arrow">&rsaquo;</span>
         </a>
