@@ -1,0 +1,402 @@
+/* ============================================
+   sak1361.github.io — Common Stylesheet
+   ============================================ */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #0071e3;
+  --color-primary-light: #e8f4fd;
+  --color-text: #1d1d1f;
+  --color-text-secondary: #6e6e73;
+  --color-text-tertiary: #86868b;
+  --color-bg: #fbfbfd;
+  --color-card-bg: #ffffff;
+  --color-border: #e5e5ea;
+  --color-border-light: #f2f2f7;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Segoe UI", sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+  --max-width: 720px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #2997ff;
+    --color-primary-light: #1a2a3a;
+    --color-text: #f5f5f7;
+    --color-text-secondary: #a1a1a6;
+    --color-text-tertiary: #6e6e73;
+    --color-bg: #000000;
+    --color-card-bg: #1c1c1e;
+    --color-border: #38383a;
+    --color-border-light: #2c2c2e;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.3);
+    --shadow-lg: 0 8px 30px rgba(0,0,0,0.4);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- FOUC prevention: hide lang elements until JS runs --- */
+[data-lang-ja], [data-lang-en] {
+  display: none;
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+/* --- Layout --- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.container--wide {
+  max-width: 960px;
+}
+
+/* --- Language Switch --- */
+.lang-switch {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--spacing-lg);
+}
+
+.lang-switch button {
+  background: var(--color-card-bg);
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-primary);
+  padding: 6px 18px;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  transition: background 0.2s, color 0.2s;
+}
+
+.lang-switch button:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* --- Header / Hero --- */
+.site-header {
+  text-align: center;
+  padding: var(--spacing-3xl) var(--spacing-md) var(--spacing-2xl);
+}
+
+.site-header__title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--spacing-sm);
+}
+
+.site-header__subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* --- App Cards --- */
+.app-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  padding: 0 var(--spacing-md);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .app-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.app-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-light);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.app-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.app-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  color: #fff;
+  line-height: 1;
+}
+
+.app-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.app-card__name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.app-card__desc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.app-card__links {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.app-card__link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  transition: background 0.2s;
+}
+
+.app-card__link:hover {
+  opacity: 0.8;
+}
+
+/* Grid status messages (loading, error, empty) span full width */
+.app-grid__status {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--color-text-tertiary);
+}
+
+/* --- Policy / Legal Pages --- */
+.legal-page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.legal-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-primary);
+}
+
+.legal-page h1 {
+  font-size: 1.6rem;
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.legal-page .updated {
+  color: var(--color-text-tertiary);
+  font-size: 0.82rem;
+  margin-bottom: var(--spacing-xl);
+  display: block;
+}
+
+.legal-page h2 {
+  font-size: 1.1rem;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.legal-page p,
+.legal-page ul {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+.legal-page ul {
+  padding-left: var(--spacing-lg);
+}
+
+.legal-page li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.legal-page li strong {
+  color: var(--color-text);
+}
+
+.legal-page a {
+  color: var(--color-primary);
+}
+
+/* --- Policy Index --- */
+.policy-list {
+  list-style: none;
+  padding: 0;
+}
+
+.policy-list li {
+  margin-bottom: 0;
+}
+
+.policy-list a {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  transition: background 0.2s;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.policy-list a:hover {
+  background: var(--color-border-light);
+  opacity: 1;
+}
+
+.policy-list__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.policy-list__name {
+  flex: 1;
+}
+
+.policy-list__arrow {
+  color: var(--color-text-tertiary);
+  font-size: 0.85rem;
+}
+
+/* --- Footer --- */
+.site-footer {
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-md);
+  color: var(--color-text-tertiary);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--color-border-light);
+  margin-top: var(--spacing-3xl);
+}
+
+.site-footer a {
+  color: var(--color-text-tertiary);
+}
+
+.site-footer a:hover {
+  color: var(--color-primary);
+}
+
+/* --- Section --- */
+.section {
+  padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.section__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  letter-spacing: -0.02em;
+}
+
+/* --- Badge --- */
+.hero-badge {
+  display: inline-block;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 100px;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: 0.02em;
+}
+
+/* --- Utilities --- */
+.text-center { text-align: center; }
+.text-secondary { color: var(--color-text-secondary); }
+.text-small { font-size: 0.85rem; }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }

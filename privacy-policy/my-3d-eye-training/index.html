@@ -4,24 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>プライバシーポリシー / Privacy Policy - 自由に立体視トレーニング</title>
-<style>
-  body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 0 auto; padding: 20px; line-height: 1.8; color: #333; }
-  h1 { font-size: 1.4em; border-bottom: 2px solid #1a6b3c; padding-bottom: 8px; }
-  h2 { font-size: 1.1em; margin-top: 24px; }
-  p, ul { font-size: 0.95em; }
-  .updated { color: #666; font-size: 0.85em; }
-  .lang-toggle { text-align: right; margin-bottom: 16px; }
-  .lang-toggle a { color: #1a6b3c; text-decoration: none; font-weight: 600; }
-  .lang-toggle a:hover { text-decoration: underline; }
-  hr.section-divider { border: none; border-top: 2px solid #1a6b3c; margin: 40px 0; }
-</style>
+<link rel="stylesheet" href="../../assets/css/common.css">
 </head>
 <body>
 
-<p class="lang-toggle"><a href="#english">English version below</a></p>
+<div class="legal-page">
 
+<div class="lang-switch">
+  <button onclick="switchLang()">English / 日本語</button>
+</div>
+
+<a href="../" class="legal-page__back">&larr; <span data-lang-ja>一覧に戻る</span><span data-lang-en>Back to list</span></a>
+
+<!-- 日本語 -->
+<div data-lang-ja>
 <h1>プライバシーポリシー</h1>
-<p class="updated">最終更新日: 2026年2月21日</p>
+<span class="updated">最終更新日: 2026年2月21日</span>
 
 <p>本プライバシーポリシーは、「自由に立体視トレーニング」アプリ（以下「本アプリ」）における個人情報の取り扱いについて説明するものです。</p>
 
@@ -60,11 +58,12 @@
 <h2>8. お問い合わせ</h2>
 <p>本アプリのプライバシーに関するお問い合わせは、以下までご連絡ください。</p>
 <p>メール: <a href="mailto:sa0601ku@gmail.com">sa0601ku@gmail.com</a></p>
+</div>
 
-<hr class="section-divider">
-
-<h1 id="english">Privacy Policy</h1>
-<p class="updated">Last updated: February 21, 2026</p>
+<!-- English -->
+<div data-lang-en>
+<h1>Privacy Policy</h1>
+<span class="updated">Last updated: February 21, 2026</span>
 
 <p>This privacy policy describes how the "MyPicture 3D Eye Training" app ("the App") handles personal information.</p>
 
@@ -89,7 +88,7 @@
 </ul>
 
 <h2>4. App Tracking Transparency (ATT)</h2>
-<p>On iOS, the App uses Apple's App Tracking Transparency (ATT) framework to request tracking permission for personalized advertising. All app features remain fully available regardless of your choice (ads will not be personalized if you decline).</p>
+<p>On iOS, the App uses Apple's ATT framework to request tracking permission for personalized advertising. All app features remain fully available regardless of your choice (ads will not be personalized if you decline).</p>
 
 <h2>5. Data Storage</h2>
 <p>All training records and settings are stored in your device's local storage. Deleting the App removes all data.</p>
@@ -103,6 +102,16 @@
 <h2>8. Contact</h2>
 <p>For privacy-related inquiries about this App, please contact us at:</p>
 <p>Email: <a href="mailto:sa0601ku@gmail.com">sa0601ku@gmail.com</a></p>
+</div>
+
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 sak1361. All rights reserved.</p>
+</footer>
+
+<script src="../../assets/js/common.js"></script>
+<script>setLang(detectLang());</script>
 
 </body>
 </html>

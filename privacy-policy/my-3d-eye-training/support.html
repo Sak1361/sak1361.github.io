@@ -3,39 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>サポート - 自由に立体視トレーニング</title>
-<style>
-  body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 0 auto; padding: 20px; line-height: 1.8; color: #333; }
-  h1 { font-size: 1.4em; border-bottom: 2px solid #1a6b3c; padding-bottom: 8px; }
-  h2 { font-size: 1.1em; margin-top: 24px; }
-  p { font-size: 0.95em; }
-  a { color: #1a6b3c; }
-</style>
+<title>サポート / Support - 自由に立体視トレーニング</title>
+<link rel="stylesheet" href="../../assets/css/common.css">
 </head>
 <body>
-<h1>サポート / Support</h1>
 
-<h2>お問い合わせ / Contact</h2>
+<div class="legal-page">
+
+<div class="lang-switch">
+  <button onclick="switchLang()">English / 日本語</button>
+</div>
+
+<a href="./" class="legal-page__back">&larr; <span data-lang-ja>プライバシーポリシー</span><span data-lang-en>Privacy Policy</span></a>
+
+<!-- 日本語 -->
+<div data-lang-ja>
+<h1>サポート</h1>
+
+<h2>お問い合わせ</h2>
 <p>アプリに関するご質問・不具合報告・ご要望は、以下のメールアドレスまでお送りください。</p>
+<p><a href="mailto:sa0601ku@gmail.com">sa0601ku@gmail.com</a></p>
+
+<h2>よくある質問</h2>
+
+<h2>Q: 写真や動画はサーバーに送信されますか？</h2>
+<p>いいえ。選択した写真・動画は端末上でのみ使用され、外部に送信されることはありません。</p>
+
+<h2>Q: トレーニング記録はどこに保存されますか？</h2>
+<p>端末のローカルストレージに保存されます。アプリを削除するとデータは消去されます。</p>
+
+<h2>Q: 広告を非表示にできますか？</h2>
+<p>現在、広告非表示オプションはご用意しておりません。</p>
+</div>
+
+<!-- English -->
+<div data-lang-en>
+<h1>Support</h1>
+
+<h2>Contact</h2>
 <p>For questions, bug reports, or feature requests, please contact us at:</p>
 <p><a href="mailto:sa0601ku@gmail.com">sa0601ku@gmail.com</a></p>
 
-<h2>よくある質問 / FAQ</h2>
+<h2>FAQ</h2>
 
-<h3>Q: 写真や動画はサーバーに送信されますか？</h3>
-<p>いいえ。選択した写真・動画は端末上でのみ使用され、外部に送信されることはありません。</p>
-
-<h3>Q: Are my photos/videos uploaded to any server?</h3>
+<h2>Q: Are my photos/videos uploaded to any server?</h2>
 <p>No. Selected photos and videos are used only on your device and are never transmitted externally.</p>
 
-<h3>Q: トレーニング記録はどこに保存されますか？</h3>
-<p>端末のローカルストレージに保存されます。アプリを削除するとデータは消去されます。</p>
+<h2>Q: Where is my training data stored?</h2>
+<p>It is stored in your device's local storage. Deleting the app removes all data.</p>
 
-<h3>Q: 広告を非表示にできますか？</h3>
-<p>現在、広告非表示オプションはご用意しておりません。</p>
+<h2>Q: Can I remove ads?</h2>
+<p>An ad-free option is not currently available.</p>
+</div>
 
-<p style="margin-top: 32px; color: #666; font-size: 0.85em;">
-  <a href="./">プライバシーポリシー</a>
-</p>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 sak1361. All rights reserved.</p>
+</footer>
+
+<script src="../../assets/js/common.js"></script>
+<script>setLang(detectLang());</script>
+
 </body>
 </html>

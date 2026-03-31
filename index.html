@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sak1361 Apps</title>
+<meta name="description" content="個人開発iOSアプリの一覧・プライバシーポリシー・利用規約">
+<link rel="stylesheet" href="./assets/css/common.css">
+</head>
+<body>
+
+<div class="lang-switch" style="max-width:960px;margin:var(--spacing-md) auto 0;padding:0 var(--spacing-md);">
+  <button onclick="switchLang()">English / 日本語</button>
+</div>
+
+<!-- Japanese -->
+<div data-lang-ja>
+
+<header class="site-header">
+  <div class="hero-badge">iOS Apps</div>
+  <h1 class="site-header__title">sak1361 Apps</h1>
+  <p class="site-header__subtitle">しがないエンジニアが作った、ちょっと便利な個人開発アプリたち</p>
+</header>
+
+<section class="section">
+  <h2 class="section__title">リリース中のアプリ</h2>
+  <div id="app-grid-ja" class="app-grid">
+    <div class="app-grid__status">読み込み中...</div>
+  </div>
+</section>
+
+</div>
+
+<!-- English -->
+<div data-lang-en>
+
+<header class="site-header">
+  <div class="hero-badge">iOS Apps</div>
+  <h1 class="site-header__title">sak1361 Apps</h1>
+  <p class="site-header__subtitle">Indie iOS apps built by a solo developer in Japan</p>
+</header>
+
+<section class="section">
+  <h2 class="section__title">Available Apps</h2>
+  <div id="app-grid-en" class="app-grid">
+    <div class="app-grid__status">Loading...</div>
+  </div>
+</section>
+
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 sak1361. All rights reserved.</p>
+</footer>
+
+<script src="./assets/js/common.js"></script>
+<script>
+function renderApps(apps, lang) {
+  const grid = document.getElementById(`app-grid-${lang}`);
+  const released = apps.filter(a => a.released);
+
+  if (released.length === 0) {
+    grid.innerHTML = `<div class="app-grid__status">${lang === 'ja' ? 'まだアプリがありません' : 'No apps available yet'}</div>`;
+    return;
+  }
+
+  grid.innerHTML = released.map(app => {
+    const name = lang === 'ja' ? app.name_ja : app.name_en;
+    const desc = lang === 'ja' ? app.description_ja : app.description_en;
+    const emoji = APP_ICON_MAP[app.icon] || '📱';
+
+    let links = '';
+    if (app.has_privacy_policy) {
+      const ppLabel = lang === 'ja' ? 'プライバシーポリシー' : 'Privacy Policy';
+      links += `<a href="./privacy-policy/${app.id}/" class="app-card__link">${ppLabel}</a>`;
+    }
+    if (app.has_terms) {
+      const tLabel = lang === 'ja' ? '利用規約' : 'Terms';
+      links += `<a href="./terms/${app.id}/" class="app-card__link">${tLabel}</a>`;
+    }
+    if (app.app_store_url) {
+      links += `<a href="${app.app_store_url}" class="app-card__link" target="_blank" rel="noopener">App Store</a>`;
+    }
+
+    return `
+      <div class="app-card">
+        <div class="app-card__icon" style="background:${app.color}">${emoji}</div>
+        <div class="app-card__body">
+          <div class="app-card__name">${name}</div>
+          <div class="app-card__desc">${desc}</div>
+          ${links ? `<div class="app-card__links">${links}</div>` : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+(async function() {
+  setLang(detectLang());
+  try {
+    const apps = await fetchApps('./');
+    renderApps(apps, 'ja');
+    renderApps(apps, 'en');
+  } catch (e) {
+    document.getElementById('app-grid-ja').innerHTML = '<div class="app-grid__status">データの読み込みに失敗しました</div>';
+    document.getElementById('app-grid-en').innerHTML = '<div class="app-grid__status">Failed to load data</div>';
+  }
+})();
+</script>
+
+</body>
+</html>

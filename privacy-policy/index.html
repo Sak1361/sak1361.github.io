@@ -3,21 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>プライバシーポリシー</title>
-<style>
-  body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 0 auto; padding: 20px; line-height: 1.8; color: #333; }
-  h1 { font-size: 1.4em; border-bottom: 2px solid #333; padding-bottom: 8px; }
-  a { color: #1a6b3c; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  ul { list-style: none; padding: 0; }
-  li { padding: 12px 0; border-bottom: 1px solid #eee; }
-</style>
+<title>プライバシーポリシー一覧 / Privacy Policies</title>
+<link rel="stylesheet" href="../assets/css/common.css">
 </head>
 <body>
+
+<div class="legal-page">
+
+<div class="lang-switch">
+  <button onclick="switchLang()">English / 日本語</button>
+</div>
+
+<a href="../" class="legal-page__back">&larr; <span data-lang-ja>トップに戻る</span><span data-lang-en>Back to Home</span></a>
+
+<!-- Japanese -->
+<div data-lang-ja>
 <h1>プライバシーポリシー一覧</h1>
-<ul>
-  <li><a href="./my-3d-eye-training/">自由に立体視トレーニング</a></li>
-  <li><a href="./namiyomi/">波読くん - 舟券予想支援アプリ</a></li>
-</ul>
+<ul id="policy-list-ja" class="policy-list mt-lg"></ul>
+</div>
+
+<!-- English -->
+<div data-lang-en>
+<h1>Privacy Policies</h1>
+<ul id="policy-list-en" class="policy-list mt-lg"></ul>
+</div>
+
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 sak1361. All rights reserved.</p>
+</footer>
+
+<script src="../assets/js/common.js"></script>
+<script>
+function renderList(apps, lang) {
+  const list = document.getElementById(`policy-list-${lang}`);
+  const items = apps.filter(a => a.released && a.has_privacy_policy);
+
+  if (items.length === 0) {
+    list.innerHTML = `<li class="app-grid__status">${lang === 'ja' ? 'まだポリシーがありません' : 'No policies available yet'}</li>`;
+    return;
+  }
+
+  list.innerHTML = items.map(app => {
+    const name = lang === 'ja' ? app.name_ja : app.name_en;
+    const emoji = APP_ICON_MAP[app.icon] || '📱';
+    return `
+      <li>
+        <a href="./${app.id}/">
+          <span class="policy-list__icon" style="background:${app.color}">${emoji}</span>
+          <span class="policy-list__name">${name}</span>
+          <span class="policy-list__arrow">&rsaquo;</span>
+        </a>
+      </li>
+    `;
+  }).join('');
+}
+
+(async function() {
+  setLang(detectLang());
+  try {
+    const apps = await fetchApps('../');
+    renderList(apps, 'ja');
+    renderList(apps, 'en');
+  } catch (e) {
+    document.getElementById('policy-list-ja').innerHTML = '<li>読み込みに失敗しました</li>';
+    document.getElementById('policy-list-en').innerHTML = '<li>Failed to load</li>';
+  }
+})();
+</script>
+
 </body>
 </html>

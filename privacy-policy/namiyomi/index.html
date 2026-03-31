@@ -3,19 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>プライバシーポリシー - 波読くん</title>
-<style>
-  body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 0 auto; padding: 20px; line-height: 1.8; color: #333; }
-  h1 { font-size: 1.4em; border-bottom: 2px solid #0066cc; padding-bottom: 8px; }
-  h2 { font-size: 1.1em; margin-top: 24px; }
-  p, ul { font-size: 0.95em; }
-  .updated { color: #666; font-size: 0.85em; }
-</style>
+<title>プライバシーポリシー / Privacy Policy - 波読くん</title>
+<link rel="stylesheet" href="../../assets/css/common.css">
 </head>
 <body>
 
+<div class="legal-page">
+
+<div class="lang-switch">
+  <button onclick="switchLang()">English / 日本語</button>
+</div>
+
+<a href="../" class="legal-page__back">&larr; <span data-lang-ja>一覧に戻る</span><span data-lang-en>Back to list</span></a>
+
+<!-- 日本語 -->
+<div data-lang-ja>
 <h1>プライバシーポリシー</h1>
-<p class="updated">最終更新日: 2026年3月16日</p>
+<span class="updated">最終更新日: 2026年3月16日</span>
 
 <p>本プライバシーポリシーは、「波読くん - 舟券予想支援アプリ」（以下「本アプリ」）における個人情報の取り扱いについて説明するものです。</p>
 
@@ -56,6 +60,62 @@
 <h2>8. お問い合わせ</h2>
 <p>本アプリのプライバシーに関するお問い合わせは、以下までご連絡ください。</p>
 <p>メール: <a href="mailto:sa0601ku@gmail.com">sa0601ku@gmail.com</a></p>
+</div>
+
+<!-- English -->
+<div data-lang-en>
+<h1>Privacy Policy</h1>
+<span class="updated">Last updated: March 16, 2026</span>
+
+<p>This privacy policy describes how "Namiyomi — Boat Race Tide & Weather" (the "App") handles your information.</p>
+
+<h2>1. Information We Collect</h2>
+<p>The App may collect the following information:</p>
+<ul>
+  <li><strong>Advertising data:</strong> The App uses Google AdMob for advertising. AdMob may collect device advertising identifiers (IDFA/GAID), IP addresses, approximate location based on IP address, and ad interaction data for personalized ad delivery.</li>
+  <li><strong>Weather & tide data:</strong> The App makes network requests to Open-Meteo API for weather and tide736.net for tide data. These requests do not include personally identifiable information.</li>
+  <li><strong>Local data:</strong> User preferences such as selected locations and theme settings are stored in UserDefaults on your device. This data is never sent externally.</li>
+</ul>
+
+<h2>2. How We Use Information</h2>
+<ul>
+  <li>Ad delivery and optimization</li>
+  <li>Fetching and displaying weather and tide data</li>
+  <li>App functionality (saving user preferences)</li>
+</ul>
+
+<h2>3. Third-Party Services</h2>
+<p>The App uses the following third-party services. Please review their privacy policies:</p>
+<ul>
+  <li><a href="https://policies.google.com/privacy">Google AdMob</a></li>
+</ul>
+<p>Weather data is fetched from <a href="https://open-meteo.com/">Open-Meteo API</a>. No personal information is sent.</p>
+
+<h2>4. App Tracking Transparency (ATT)</h2>
+<p>The App uses Apple's ATT framework to request tracking permission for personalized ads. All features remain fully available even if you decline tracking.</p>
+
+<h2>5. Data Storage</h2>
+<p>All user preferences and cache data are stored in local storage on your device. Deleting the App removes all data.</p>
+
+<h2>6. Children's Privacy</h2>
+<p>The App is intended for users aged 17 and older. We do not knowingly collect personal information from children under 17.</p>
+
+<h2>7. Changes to This Policy</h2>
+<p>This privacy policy may be updated as needed. Any changes will be published on this page.</p>
+
+<h2>8. Contact</h2>
+<p>For privacy-related inquiries, please contact us at:</p>
+<p>Email: <a href="mailto:sa0601ku@gmail.com">sa0601ku@gmail.com</a></p>
+</div>
+
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 sak1361. All rights reserved.</p>
+</footer>
+
+<script src="../../assets/js/common.js"></script>
+<script>setLang(detectLang());</script>
 
 </body>
 </html>
