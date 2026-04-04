@@ -205,10 +205,22 @@ a:hover {
   min-width: 0;
 }
 
-.app-card__name {
+.app-card__name,
+.app-card__name-link {
   font-size: 1.05rem;
   font-weight: 600;
   margin-bottom: 2px;
+  display: block;
+}
+
+.app-card__name-link {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.app-card__name-link:hover {
+  color: var(--color-primary);
+  opacity: 1;
 }
 
 .app-card__desc {
