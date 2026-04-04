@@ -668,28 +668,7 @@ a:active {
   }
 }
 
-/* --- Responsive: 大画面でカード2列 --- */
-@media (min-width: 700px) {
-  .app-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-    border: 1px solid var(--color-border);
-  }
-
-  .app-card {
-    border-bottom: 1px solid var(--color-border);
-    border-right: 1px solid var(--color-border);
-  }
-
-  .app-card:nth-child(2n) {
-    border-right: none;
-  }
-
-  .app-card:nth-last-child(-n+2) {
-    border-bottom: none;
-  }
-}
+/* アプリカードは常に縦並び（2chスレのレス風） */
 
 /* --- Smooth hover transitions (さりげなく) --- */
 .app-card {
@@ -731,14 +710,7 @@ a:active {
 .app-card:nth-child(5) { animation-delay: 0.32s; }
 .app-card:nth-child(6) { animation-delay: 0.40s; }
 
-/* --- AA にホバーで微妙に揺れる --- */
-.aa-art {
-  transition: transform 0.3s ease;
-}
-
-.aa-art:hover {
-  transform: rotate(-0.5deg);
-}
+/* AA は SVG 画像で表示（テキストAAはフォント依存で崩れるため） */
 
 /* --- セクションタイトルの左端にアクセント線 --- */
 .section__title {
