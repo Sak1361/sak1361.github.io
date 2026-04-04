@@ -101,27 +101,38 @@
   <h2 class="section__title">リリース中のアプリ</h2>
   <div id="app-grid-ja" class="app-grid">
     <!-- 静的HTMLフォールバック（SEO用・JSで上書き） -->
-    <a href="./apps/my-3d-eye-training/" class="app-card" style="text-decoration:none;color:inherit;">
+    <div class="app-card">
       <img class="app-card__icon app-card__icon--img" src="./assets/icons/my-3d-eye-training.png" alt="自由に立体視トレーニング" width="56" height="56">
       <div class="app-card__body">
         <div class="app-card__name">自由に立体視トレーニング</div>
         <div class="app-card__desc">写真・動画で立体視トレーニング</div>
+        <div class="app-card__links">
+          <a href="./apps/my-3d-eye-training/" class="app-card__link">詳細</a>
+          <a href="https://apps.apple.com/app/id6759676809" class="app-card__link" target="_blank" rel="noopener">App Store</a>
+        </div>
       </div>
-    </a>
-    <a href="./apps/namiyomi/" class="app-card" style="text-decoration:none;color:inherit;">
+    </div>
+    <div class="app-card">
       <img class="app-card__icon app-card__icon--img" src="./assets/icons/namiyomi.png" alt="波読くん" width="56" height="56">
       <div class="app-card__body">
         <div class="app-card__name">波読くん</div>
         <div class="app-card__desc">競艇潮位・天気情報＆買目数計算</div>
+        <div class="app-card__links">
+          <a href="./apps/namiyomi/" class="app-card__link">詳細</a>
+          <a href="https://apps.apple.com/app/id6760622373" class="app-card__link" target="_blank" rel="noopener">App Store</a>
+        </div>
       </div>
-    </a>
-    <a href="./apps/photosorter/" class="app-card" style="text-decoration:none;color:inherit;">
+    </div>
+    <div class="app-card">
       <img class="app-card__icon app-card__icon--img" src="./assets/icons/photosorter.png" alt="写真整理くん" width="56" height="56">
       <div class="app-card__body">
         <div class="app-card__name">写真整理くん</div>
         <div class="app-card__desc">溜まった写真、AIがスッキリ整理</div>
+        <div class="app-card__links">
+          <a href="./apps/photosorter/" class="app-card__link">詳細</a>
+        </div>
       </div>
-    </a>
+    </div>
   </div>
 </section>
 
@@ -140,27 +151,38 @@
   <h2 class="section__title">Available Apps</h2>
   <div id="app-grid-en" class="app-grid">
     <!-- 静的HTMLフォールバック（SEO用・JSで上書き） -->
-    <a href="./apps/my-3d-eye-training/" class="app-card" style="text-decoration:none;color:inherit;">
+    <div class="app-card">
       <img class="app-card__icon app-card__icon--img" src="./assets/icons/my-3d-eye-training.png" alt="MyPicture 3D Eye Training" width="56" height="56">
       <div class="app-card__body">
         <div class="app-card__name">MyPicture 3D Eye Training</div>
         <div class="app-card__desc">Stereoscopic training with your photos & videos</div>
+        <div class="app-card__links">
+          <a href="./apps/my-3d-eye-training/" class="app-card__link">Details</a>
+          <a href="https://apps.apple.com/app/id6759676809" class="app-card__link" target="_blank" rel="noopener">App Store</a>
+        </div>
       </div>
-    </a>
-    <a href="./apps/namiyomi/" class="app-card" style="text-decoration:none;color:inherit;">
+    </div>
+    <div class="app-card">
       <img class="app-card__icon app-card__icon--img" src="./assets/icons/namiyomi.png" alt="Namiyomi" width="56" height="56">
       <div class="app-card__body">
         <div class="app-card__name">Namiyomi</div>
         <div class="app-card__desc">Boat race tide & weather info with bet calculator</div>
+        <div class="app-card__links">
+          <a href="./apps/namiyomi/" class="app-card__link">Details</a>
+          <a href="https://apps.apple.com/app/id6760622373" class="app-card__link" target="_blank" rel="noopener">App Store</a>
+        </div>
       </div>
-    </a>
-    <a href="./apps/photosorter/" class="app-card" style="text-decoration:none;color:inherit;">
+    </div>
+    <div class="app-card">
       <img class="app-card__icon app-card__icon--img" src="./assets/icons/photosorter.png" alt="PhotoSorter" width="56" height="56">
       <div class="app-card__body">
         <div class="app-card__name">PhotoSorter</div>
         <div class="app-card__desc">AI-powered photo organizer</div>
+        <div class="app-card__links">
+          <a href="./apps/photosorter/" class="app-card__link">Details</a>
+        </div>
       </div>
-    </a>
+    </div>
   </div>
 </section>
 
@@ -210,15 +232,18 @@ function renderApps(apps, lang) {
 
     const appPageLink = `./apps/${app.id}/`;
 
+    const detailLabel = lang === 'ja' ? '詳細' : 'Details';
+    const detailLink = `<a href="${appPageLink}" class="app-card__link">${detailLabel}</a>`;
+
     return `
-      <a href="${appPageLink}" class="app-card" style="text-decoration:none;color:inherit;">
+      <div class="app-card">
         ${iconHtml}
         <div class="app-card__body">
           <div class="app-card__name">${name}</div>
           <div class="app-card__desc">${desc}</div>
-          ${links ? `<div class="app-card__links">${links}</div>` : ''}
+          <div class="app-card__links">${detailLink}${links}</div>
         </div>
-      </a>
+      </div>
     `;
   }).join('');
 }
