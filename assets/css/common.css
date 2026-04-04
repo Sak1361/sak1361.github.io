@@ -287,13 +287,14 @@ a:active {
 
 /* --- AA art container --- */
 .aa-art {
-  font-family: var(--font-aa);
+  font-family: "Saitamaar", "MS PGothic", "IPAMonaPGothic", "Mona", "Hiragino Kaku Gothic Pro", monospace;
   white-space: pre;
-  line-height: 1.2;
+  line-height: 18px;
   font-size: 16px;
   overflow-x: auto;
   color: var(--color-text);
   margin: var(--spacing-md) 0;
+  -webkit-text-size-adjust: none;
 }
 
 /* --- Section title (板名風) --- */
