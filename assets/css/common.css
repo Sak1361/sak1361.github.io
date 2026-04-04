@@ -603,3 +603,191 @@ a:active {
   font-weight: normal;
   color: var(--color-link);
 }
+
+/* ============================================
+   Modern enhancements (レスポンシブ・アニメーション)
+   2ch の質感を保ちつつモダン技術を混ぜる
+   ============================================ */
+
+/* --- Responsive: モバイル最適化 --- */
+@media (max-width: 600px) {
+  .site-header__title {
+    font-size: 18px;
+  }
+
+  .aa-art {
+    font-size: 11px;
+    line-height: 1.15;
+  }
+
+  .app-card {
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+
+  .app-card__icon,
+  .app-card__icon--img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .app-card__name,
+  .app-card__name-link {
+    font-size: 13px;
+  }
+
+  .app-card__desc {
+    font-size: 12px;
+  }
+
+  .res-header {
+    font-size: 10px;
+  }
+
+  .section__title {
+    font-size: 13px;
+  }
+
+  .app-landing__hero {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .app-landing__icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .app-landing__title {
+    font-size: 18px;
+  }
+
+  .app-landing__features li,
+  .app-landing__steps li,
+  .app-landing__body p {
+    font-size: 13px;
+  }
+}
+
+/* --- Responsive: 大画面でカード2列 --- */
+@media (min-width: 700px) {
+  .app-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 1px solid var(--color-border);
+  }
+
+  .app-card {
+    border-bottom: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+  }
+
+  .app-card:nth-child(2n) {
+    border-right: none;
+  }
+
+  .app-card:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+}
+
+/* --- Smooth hover transitions (さりげなく) --- */
+.app-card {
+  transition: background-color 0.15s ease;
+}
+
+.app-card:hover {
+  background-color: #e4e4e4;
+}
+
+/* --- アイコン hover で微拡大 --- */
+.app-card__icon--img {
+  transition: transform 0.2s ease;
+}
+
+.app-card:hover .app-card__icon--img {
+  transform: scale(1.05);
+}
+
+/* --- スクロールフェードイン --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-card {
+  animation: fadeInUp 0.4s ease both;
+}
+
+.app-card:nth-child(2) { animation-delay: 0.08s; }
+.app-card:nth-child(3) { animation-delay: 0.16s; }
+.app-card:nth-child(4) { animation-delay: 0.24s; }
+.app-card:nth-child(5) { animation-delay: 0.32s; }
+.app-card:nth-child(6) { animation-delay: 0.40s; }
+
+/* --- AA にホバーで微妙に揺れる --- */
+.aa-art {
+  transition: transform 0.3s ease;
+}
+
+.aa-art:hover {
+  transform: rotate(-0.5deg);
+}
+
+/* --- セクションタイトルの左端にアクセント線 --- */
+.section__title {
+  position: relative;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.section__title::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60%;
+  background: green;
+}
+
+/* --- フッターリンクにホバーアンダーライン --- */
+.site-footer a {
+  text-decoration: none;
+  position: relative;
+}
+
+.site-footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 1px;
+  background: var(--color-link-active);
+  transition: width 0.2s ease;
+}
+
+.site-footer a:hover::after {
+  width: 100%;
+}
+
+/* --- Container query for future-proofing --- */
+@supports (container-type: inline-size) {
+  .app-grid {
+    container-type: inline-size;
+  }
+
+  @container (min-width: 500px) {
+    .app-card__desc {
+      font-size: 14px;
+    }
+  }
+}
