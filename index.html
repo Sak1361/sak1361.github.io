@@ -3,9 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>sak1361 Apps</title>
-<meta name="description" content="個人開発iOSアプリの一覧・プライバシーポリシー・利用規約">
+<title>sak1361 Apps - 個人開発iOSアプリ | 立体視トレーニング・競艇情報・写真整理</title>
+<meta name="description" content="個人開発のiOSアプリ一覧。立体視トレーニング、競艇の買目計算・潮位・天気情報、AI写真自動分類など、ちょっと便利なアプリを公開中。">
+<link rel="canonical" href="https://sak1361.github.io/">
+<!-- OGP -->
+<meta property="og:title" content="sak1361 Apps - 個人開発iOSアプリ">
+<meta property="og:description" content="立体視トレーニング、競艇情報、AI写真整理など、個人開発のiOSアプリを公開中。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sak1361.github.io/">
+<meta property="og:image" content="https://sak1361.github.io/assets/icons/my-3d-eye-training.png">
+<meta property="og:site_name" content="sak1361 Apps">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sak1361 Apps - 個人開発iOSアプリ">
+<meta name="twitter:description" content="立体視トレーニング、競艇情報、AI写真整理など、個人開発のiOSアプリを公開中。">
+<!-- hreflang -->
+<link rel="alternate" hreflang="ja" href="https://sak1361.github.io/">
+<link rel="alternate" hreflang="en" href="https://sak1361.github.io/">
 <link rel="stylesheet" href="./assets/css/common.css">
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "sak1361 Apps",
+  "url": "https://sak1361.github.io/",
+  "description": "個人開発のiOSアプリ一覧",
+  "author": {
+    "@type": "Person",
+    "name": "sak1361"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "自由に立体視トレーニング",
+        "url": "https://sak1361.github.io/apps/my-3d-eye-training/",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "iOS",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "波読くん",
+        "url": "https://sak1361.github.io/apps/namiyomi/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "iOS",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": "写真整理くん",
+        "url": "https://sak1361.github.io/apps/photosorter/",
+        "applicationCategory": "PhotographyApplication",
+        "operatingSystem": "iOS",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -25,7 +100,28 @@
 <section class="section">
   <h2 class="section__title">リリース中のアプリ</h2>
   <div id="app-grid-ja" class="app-grid">
-    <div class="app-grid__status">読み込み中...</div>
+    <!-- 静的HTMLフォールバック（SEO用・JSで上書き） -->
+    <a href="./apps/my-3d-eye-training/" class="app-card" style="text-decoration:none;color:inherit;">
+      <img class="app-card__icon app-card__icon--img" src="./assets/icons/my-3d-eye-training.png" alt="自由に立体視トレーニング" width="56" height="56">
+      <div class="app-card__body">
+        <div class="app-card__name">自由に立体視トレーニング</div>
+        <div class="app-card__desc">写真・動画で立体視トレーニング</div>
+      </div>
+    </a>
+    <a href="./apps/namiyomi/" class="app-card" style="text-decoration:none;color:inherit;">
+      <img class="app-card__icon app-card__icon--img" src="./assets/icons/namiyomi.png" alt="波読くん" width="56" height="56">
+      <div class="app-card__body">
+        <div class="app-card__name">波読くん</div>
+        <div class="app-card__desc">競艇潮位・天気情報＆買目数計算</div>
+      </div>
+    </a>
+    <a href="./apps/photosorter/" class="app-card" style="text-decoration:none;color:inherit;">
+      <img class="app-card__icon app-card__icon--img" src="./assets/icons/photosorter.png" alt="写真整理くん" width="56" height="56">
+      <div class="app-card__body">
+        <div class="app-card__name">写真整理くん</div>
+        <div class="app-card__desc">溜まった写真、AIがスッキリ整理</div>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -43,7 +139,28 @@
 <section class="section">
   <h2 class="section__title">Available Apps</h2>
   <div id="app-grid-en" class="app-grid">
-    <div class="app-grid__status">Loading...</div>
+    <!-- 静的HTMLフォールバック（SEO用・JSで上書き） -->
+    <a href="./apps/my-3d-eye-training/" class="app-card" style="text-decoration:none;color:inherit;">
+      <img class="app-card__icon app-card__icon--img" src="./assets/icons/my-3d-eye-training.png" alt="MyPicture 3D Eye Training" width="56" height="56">
+      <div class="app-card__body">
+        <div class="app-card__name">MyPicture 3D Eye Training</div>
+        <div class="app-card__desc">Stereoscopic training with your photos & videos</div>
+      </div>
+    </a>
+    <a href="./apps/namiyomi/" class="app-card" style="text-decoration:none;color:inherit;">
+      <img class="app-card__icon app-card__icon--img" src="./assets/icons/namiyomi.png" alt="Namiyomi" width="56" height="56">
+      <div class="app-card__body">
+        <div class="app-card__name">Namiyomi</div>
+        <div class="app-card__desc">Boat race tide & weather info with bet calculator</div>
+      </div>
+    </a>
+    <a href="./apps/photosorter/" class="app-card" style="text-decoration:none;color:inherit;">
+      <img class="app-card__icon app-card__icon--img" src="./assets/icons/photosorter.png" alt="PhotoSorter" width="56" height="56">
+      <div class="app-card__body">
+        <div class="app-card__name">PhotoSorter</div>
+        <div class="app-card__desc">AI-powered photo organizer</div>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -91,14 +208,18 @@ function renderApps(apps, lang) {
       links += `<a href="./terms/${app.id}/" class="app-card__link">${tLabel}</a>`;
     }
 
+    const appPageLink = `./apps/${app.id}/`;
+
     return `
       <div class="app-card">
-        ${iconHtml}
-        <div class="app-card__body">
-          <div class="app-card__name">${name}</div>
-          <div class="app-card__desc">${desc}</div>
-          ${links ? `<div class="app-card__links">${links}</div>` : ''}
-        </div>
+        <a href="${appPageLink}" style="display:contents;text-decoration:none;color:inherit;">
+          ${iconHtml}
+          <div class="app-card__body">
+            <div class="app-card__name">${name}</div>
+            <div class="app-card__desc">${desc}</div>
+          </div>
+        </a>
+        ${links ? `<div class="app-card__links">${links}</div>` : ''}
       </div>
     `;
   }).join('');
@@ -111,8 +232,7 @@ function renderApps(apps, lang) {
     renderApps(apps, 'ja');
     renderApps(apps, 'en');
   } catch (e) {
-    document.getElementById('app-grid-ja').innerHTML = '<div class="app-grid__status">データの読み込みに失敗しました</div>';
-    document.getElementById('app-grid-en').innerHTML = '<div class="app-grid__status">Failed to load data</div>';
+    // 静的HTMLフォールバックがあるため、エラー時はそのまま表示
   }
 })();
 </script>

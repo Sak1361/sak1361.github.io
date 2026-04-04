@@ -412,3 +412,123 @@ a:hover {
 .mt-lg { margin-top: var(--spacing-lg); }
 .mb-md { margin-bottom: var(--spacing-md); }
 .mb-lg { margin-bottom: var(--spacing-lg); }
+
+/* --- App Landing Page --- */
+.app-landing {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.app-landing__hero {
+  text-align: center;
+  padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+}
+
+.app-landing__icon {
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.app-landing__title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--spacing-xs);
+}
+
+.app-landing__subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.app-landing__badge {
+  display: inline-block;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 100px;
+  transition: opacity 0.2s;
+}
+
+.app-landing__badge:hover {
+  opacity: 0.85;
+  color: var(--color-bg);
+}
+
+.app-landing__body {
+  padding-bottom: var(--spacing-2xl);
+}
+
+.app-landing__body section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.app-landing__body h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.app-landing__body p {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.app-landing__features {
+  list-style: none;
+  padding: 0;
+}
+
+.app-landing__features li {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  padding: var(--spacing-xs) 0;
+  padding-left: 1.2em;
+  position: relative;
+}
+
+.app-landing__features li::before {
+  content: "\2022";
+  color: var(--color-primary);
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+}
+
+.app-landing__features li strong {
+  color: var(--color-text);
+}
+
+.app-landing__steps {
+  padding-left: 1.5em;
+}
+
+.app-landing__steps li {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  padding: var(--spacing-xs) 0;
+}
+
+.app-landing__links {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border-light);
+  margin-top: var(--spacing-xl);
+}
+
+.app-landing__links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-primary);
+}

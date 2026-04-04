@@ -17,14 +17,24 @@ URL: `https://sak1361.github.io/`
 
 ```
 /
-├── index.html                    # ランディングページ（apps.json から動的生成）
+├── index.html                    # ランディングページ（静的HTML+JS動的上書き）
 ├── apps.json                     # アプリ一覧・リリース状態の一元管理
 ├── app-ads.txt                   # AdMob パブリッシャー認証
+├── robots.txt                    # クローラー制御
+├── sitemap.xml                   # サイトマップ（Google Search Console用）
 ├── assets/
 │   ├── css/
 │   │   └── common.css            # 全ページ共通スタイルシート
+│   ├── icons/                    # アプリアイコン画像
 │   └── js/
 │       └── common.js             # 共通JS（言語切替、iconMap、fetchApps）
+├── apps/                         # アプリ個別ランディングページ（SEO用）
+│   ├── my-3d-eye-training/
+│   │   └── index.html            # 自由に立体視トレーニング LP
+│   ├── namiyomi/
+│   │   └── index.html            # 波読くん LP
+│   └── photosorter/
+│       └── index.html            # 写真整理くん LP
 ├── privacy-policy/
 │   ├── index.html                # プライバシーポリシー一覧（apps.json から動的生成）
 │   ├── my-3d-eye-training/
