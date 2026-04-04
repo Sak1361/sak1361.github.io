@@ -211,16 +211,14 @@ function renderApps(apps, lang) {
     const appPageLink = `./apps/${app.id}/`;
 
     return `
-      <div class="app-card">
-        <a href="${appPageLink}" style="display:contents;text-decoration:none;color:inherit;">
-          ${iconHtml}
-          <div class="app-card__body">
-            <div class="app-card__name">${name}</div>
-            <div class="app-card__desc">${desc}</div>
-          </div>
-        </a>
-        ${links ? `<div class="app-card__links">${links}</div>` : ''}
-      </div>
+      <a href="${appPageLink}" class="app-card" style="text-decoration:none;color:inherit;">
+        ${iconHtml}
+        <div class="app-card__body">
+          <div class="app-card__name">${name}</div>
+          <div class="app-card__desc">${desc}</div>
+          ${links ? `<div class="app-card__links">${links}</div>` : ''}
+        </div>
+      </a>
     `;
   }).join('');
 }
