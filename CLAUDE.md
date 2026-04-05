@@ -86,10 +86,12 @@ URL: `https://sak1361.github.io/`
 
 ### 共通CSS（assets/css/common.css）
 
-- **フォント**: `-apple-system` (SF Pro) ベース
-- **ダークモード対応**: `prefers-color-scheme: dark` で自動切替
-- **レスポンシブ**: モバイルファースト、max-width 720px（法的ページ）/ 960px（カード）
-- **カラー変数**: CSS Custom Properties で一元管理（`--color-primary`, `--color-text` 等）
+- **デザインテーマ**: 2ch/VIP風（レトロ掲示板スタイル）
+- **フォント**: `"MS PGothic"`, `"Hiragino Kaku Gothic Pro"`, `"Meiryo"` ベース
+- **ダークモード**: なし（常にライト、2ch準拠: 背景 `#efefef`、テキスト `black`、リンク `blue`）
+- **レスポンシブ**: モバイル対応あり（600px以下でAA縮小・カード最適化）
+- **カラー変数**: CSS Custom Properties で一元管理（2ch read.cgi実ソース準拠）
+- **角丸・影**: なし（全て直角、フラット）
 
 ### 共通JS（assets/js/common.js）
 
@@ -127,6 +129,24 @@ URL: `https://sak1361.github.io/`
 - **App Store Connect**: プライバシーポリシーURL → `https://sak1361.github.io/privacy-policy/{app-id}/`
 - **サポートURL**: `https://sak1361.github.io/` または個別サポートページ
 - **AdMob**: `app-ads.txt` でパブリッシャーID認証
+
+## ブランチ戦略
+
+### 基本ルール
+
+- **mainへの直push禁止**: 軽微なバグ修正以外は必ず作業ブランチを切り、mainへマージすること
+- **リリース前は例外**: リリース直前の修正ラッシュ時のみ、毎回ブランチを切らずmainへ直接コミットしてよい
+- **作業ブランチの削除**: mainにマージしたら速やかにローカル・リモート両方のブランチを削除すること
+- **旧バージョン保存**: メジャーバージョンアップや大幅なデザイン変更時は、旧バージョン用ブランチを作成して保存する。ブランチ名はバージョン番号ベース（例: `v1.0-old-design`）
+
+### ブランチ命名規則
+
+| 用途 | 命名例 |
+|------|--------|
+| 機能追加 | `feature/seo-improvement` |
+| バグ修正 | `fix/card-layout` |
+| デザイン変更 | `feature/vipper-redesign` |
+| 旧バージョン保存 | `v1.0-old-design`, `v2.0-pre-redesign` |
 
 ## 注意事項
 
