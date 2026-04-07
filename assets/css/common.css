@@ -521,6 +521,19 @@ a:active {
 
 .app-landing__icon-wrap {
   flex-shrink: 0;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.app-landing__icon-wrap:hover {
+  animation: iconSlide 1s ease-in-out;
+}
+
+@keyframes iconSlide {
+  0%   { transform: translateX(0);     opacity: 1; }
+  30%  { transform: translateX(300px); opacity: 0; }
+  31%  { transform: translateX(-300px); opacity: 0; }
+  100% { transform: translateX(0);     opacity: 1; }
 }
 
 .app-landing__icon {
