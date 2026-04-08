@@ -19,18 +19,23 @@ const APP_ICON_MAP = {
   'function': '🧮'
 };
 
-/* --- Language Toggle --- */
+/* --- Language Toggle (localStorage で永続化) --- */
 function switchLang() {
-  const isCurrentJa = document.documentElement.lang === 'ja';
+  var isCurrentJa = document.documentElement.lang === 'ja';
   setLang(isCurrentJa ? 'en' : 'ja');
 }
 
 function setLang(lang) {
   document.documentElement.lang = lang;
+  try { localStorage.setItem('sak1361_lang', lang); } catch(e) {}
 }
 
 function detectLang() {
-  const lang = navigator.language || navigator.userLanguage || 'ja';
+  try {
+    var saved = localStorage.getItem('sak1361_lang');
+    if (saved === 'ja' || saved === 'en') return saved;
+  } catch(e) {}
+  var lang = navigator.language || navigator.userLanguage || 'ja';
   return lang.startsWith('ja') ? 'ja' : 'en';
 }
 
