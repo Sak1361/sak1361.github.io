@@ -30,17 +30,17 @@
     },
     {
       "id": "photosorter",
-      "name_ja": "写真整理くん",
+      "name_ja": "写真自動整理くん",
       "name_en": "PhotoSorter",
-      "description_ja": "溜まった写真、AIがスッキリ整理",
+      "description_ja": "溜まった写真をAIがスッキリ整理",
       "description_en": "AI-powered photo organizer",
       "icon": "photo.on.rectangle.angled",
       "icon_url": "./assets/icons/photosorter.png",
       "color": "#0066cc",
-      "released": false,
+      "released": true,
       "has_privacy_policy": true,
       "has_terms": true,
-      "app_store_url": ""
+      "app_store_url": "https://apps.apple.com/app/id6762380843"
     },
     {
       "id": "shiftalarm",
