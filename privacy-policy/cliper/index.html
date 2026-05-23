@@ -35,28 +35,29 @@
 <body>
   <main>
     <h1>Cliper Privacy Policy</h1>
-    <p class="date">Effective date: 2026-05-13</p>
+    <p class="date">Effective date: 2026-05-24</p>
 
-    <p>Cliper saves clipboard text, URLs, and reusable template phrases only when you explicitly perform a save action. The app does not continuously monitor clipboard changes in the background.</p>
+    <p>Cliper saves clipboard content, URLs, images, files, rich pasteboard representations, and reusable text/image templates only when you explicitly perform a save action. The app does not continuously monitor clipboard changes in the background.</p>
 
     <h2>Data Stored</h2>
     <p>Cliper stores saved clips, templates, settings, Files mirror configuration, and backups locally on your device. The app uses an App Group container so the main app, Shortcuts/App Intents, Share Extension, and Cliper Keyboard can access the same saved history.</p>
 
     <h2>Clipboard Access</h2>
-    <p>Clipboard text is read only when you tap a save button, run a Cliper Shortcut/App Intent, use the Share Extension, or tap Save in Cliper Keyboard. Cliper does not upload clipboard contents to a developer server.</p>
+    <p>Clipboard content is read only when you tap a save button, run a Cliper Shortcut/App Intent, use the Share Extension, or tap Save in Cliper Keyboard. Cliper reads only the pasteboard representations iOS exposes to the app for that user action. Cliper does not upload clipboard contents to a developer server.</p>
 
     <h2>Keyboard Full Access</h2>
-    <p>Cliper Keyboard requests Full Access so it can read the shared App Group store and save clipboard text when you tap the keyboard Save button. Full Access is also needed to show saved clips and templates inside the keyboard. Text typed with the keyboard is not sent to the developer.</p>
+    <p>Cliper Keyboard requests Full Access so it can read the shared App Group store and save clipboard content when you tap the keyboard Save button. Full Access is also needed to show saved clips and templates inside the keyboard. Text typed with the keyboard is not sent to the developer.</p>
 
     <h2>Files Mirror and Backups</h2>
-    <p>Files Folder Mirror is off by default. If you choose a folder in Files and enable the mirror, Cliper writes a copy of each newly saved clip to that user-selected folder. Plain text clips are mirrored as text files. Encrypted clips are mirrored as encrypted Cliper files and cannot be read outside Cliper without the app's encryption key.</p>
-    <p>Manual Files backups are created only when you tap Create Files Backup. Cliper writes the backup file to the app's Documents/Backups area so it can be accessed through the Files app. If encryption is enabled, backup files are encrypted.</p>
+    <p>Files Folder Mirror is off by default. If you choose a folder in Files and enable the mirror, Cliper synchronizes retained saved clip copies to that user-selected folder and removes stale mirrored copies after deletion, retention, or encryption changes. Plain text clips are mirrored as text files. Structured pasteboard clips are mirrored as Cliper clip files. Encrypted clip bodies are mirrored inside Cliper files and cannot be read outside Cliper without the app's encryption key; titles, tags, settings, and metadata may remain readable unless metadata hiding is enabled. If you choose iCloud Drive or another Files provider, that provider may sync mirror files according to its settings.</p>
+    <p>Manual Files backups are created only when you tap Create Files Backup. Cliper writes the backup file to the app's Documents/Backups area so it can be accessed through the Files app. If encryption is enabled, or if the backup contains encrypted clips, backup files are encrypted. If you move or store backups in iCloud Drive or another Files provider, that provider may sync those files according to its settings.</p>
+    <p>iCloud backup is optional. When enabled, Cliper writes the latest backup to its app-specific iCloud Drive container so the app can restore history, pinned clips, templates, and settings after reinstall or on another device. If the backup is encrypted, restoring encrypted content requires the Cliper encryption key to be available through the user's Keychain/iCloud Keychain.</p>
 
     <h2>Encryption</h2>
-    <p>When encryption is enabled, newly saved clip bodies are encrypted on device. The encryption key is stored in Keychain. If the Keychain key is deleted or unavailable, encrypted content may not be recoverable.</p>
+    <p>When encryption is enabled, saved clip bodies are encrypted on device and existing clips are migrated. Cliper stores the encryption key in Keychain; the key is not embedded in the app binary. Templates, settings, and metadata may remain readable unless metadata hiding is enabled. If the Keychain key is deleted or unavailable, encrypted content may not be recoverable.</p>
 
     <h2>Data Collection</h2>
-    <p>Cliper does not collect personal data, does not require an account, does not use tracking, and does not include ads, analytics, cloud sync, or external crash reporting in the MVP build.</p>
+    <p>Cliper does not collect personal data, does not require an account, does not use tracking, and does not include ads, analytics, developer-server sync, or external crash reporting in this build. Optional iCloud backup uses the user's iCloud Drive when enabled.</p>
 
     <h2>Contact</h2>
     <p>Support: <a href="https://sak1361.github.io/">https://sak1361.github.io/</a></p>
